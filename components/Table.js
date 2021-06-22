@@ -140,17 +140,17 @@ const Table = Vue.component("DataTable", {
       // Validity 
       rules: {
         required: value => !!value || 'Campo obrigatório',
-        validityCharacters: value => minMax(value, 3, "Preencha com o nome do contato!"),
+        validityCharacters: value => minMax(value, 7, "Preencha com o nome do contato!"),
         validityNumber: value => minMax(value, 8, "Preencha com o número completo!"),
       },
       // Snack 
       snackbar: false,
       timeout: 1800,
-      snackText: ""
+      snackText: "",
     };
   },
   components: {
-    MaskTextField
+    MaskTextField,
   },
   methods: {
     // Modal
@@ -162,7 +162,7 @@ const Table = Vue.component("DataTable", {
     },
     // Table
     newContact() {
-      this.newUser = { name: '', tel: '' };
+      this.newUser = { name: "", tel: "" };
       this.modeDialog = -1;
       this.open();
     },
